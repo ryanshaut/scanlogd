@@ -5,18 +5,31 @@ Pre-reqs
 -----------
 
 Unless you change the defaults in params
+
 1.) Create a local user scanlogd, with a random password (you won't need it)
+
 2.) Create /var/empty
+
 3.) Install a syslog server locally
+
   3.1) If you want to log to a separate file, add this to /etc/rsyslog
+
         daemon.alert  -/path/your/log.log
+
   3.2) Restart rsyslog
+
+4.) Optionally, as a janky monitoring solution, you can use `inotifywait` from `inotify-tools`. 
   
+  `watchDaemonAlertLog.sh` sends notifications with Pushover when your daemon.alert log changes
+
 Building
 -----------
 git clone this_repo .
+
 make -f Makefile linux
+
 sudo ./scanlogd
+
 
 Description
 -----------
