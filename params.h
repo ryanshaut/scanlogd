@@ -58,10 +58,10 @@
  * Port scan detection thresholds: at least COUNT ports need to be scanned
  * from the same source, with no longer than DELAY seconds between ports.
  */
-#define SCAN_MIN_COUNT			7
+#define SCAN_MIN_COUNT			2
 #define SCAN_MAX_COUNT			(SCAN_MIN_COUNT * PORT_WEIGHT_PRIV)
 #define SCAN_WEIGHT_THRESHOLD		SCAN_MAX_COUNT
-#define SCAN_DELAY_THRESHOLD		3
+#define SCAN_DELAY_THRESHOLD		30
 
 /*
  * Log flood detection thresholds: temporarily stop logging if more than
